@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/weather.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    
+</head>
+
+<body>
+
+    <h1>Weather </h1>
+
+    <h2>Enter Location</h2>
+
+    <div class="input-group  btn-dark">
+        
+        <input type="text" id="theCity" class="form-control" placeholder="city name" aria-label="Type in city" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary txt-accent" type="button" onclick="getInputValue()" id="button-addon2">Enter</button>
+    </div>
+
+
+      <div id="temp" class="p-1 div font" >
+          
+      </div>
+      
+      
+
+
+    
+
+
+
+
+    
+
+    <script>
+        function getInputValue(){
+            
+        var enterButton = document.getElementById("theCity").value;
+           
+        var api = "https://api.openweathermap.org/data/2.5/weather?q="
+
+        
+
+        var url = api+enterButton+key
+
+        fetch(url)
+        .then(response => response.json())
+        .then(data =>{
+            console.log(data)
+            console.log(data.main.temp);
+
+            let kelvin = data.main.temp;
+            let degC = Math.floor(kelvin -273.15);
+            console.log(degC);
+
+
+            let degF = Math.floor(degC * 1.8 +32);
+
+            console.log(degF);
+
+            let div = document.getElementById('temp');
+
+            div.textContent = `${degF.toString()} °F`;
+
+            document.getElementById('theCity').value = "" 
+
+      
+        })
+
+
+
+
+
+
+        }
+
+
+        
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</body>
+
+</html>

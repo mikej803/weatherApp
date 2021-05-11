@@ -1,0 +1,44 @@
+
+
+
+h1{
+    color: aqua;
+}
+
+h2{
+    color:aqua
+}
+
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+    background-image: url("/pics/weatherPic.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.input-group{
+    margin-bottom: 1;
+    width: 25;
+    
+}
+
+
+#temp{
+    color: rgb(87, 247, 247);
+    
+}
+
+.font{
+    font-size: 150px;
+
+}
+
+
+
