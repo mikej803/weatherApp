@@ -1,0 +1,1 @@
+var key = "&appid=964c1c03e551ed3cc73e5b3cd87ec122"
